@@ -24,9 +24,9 @@ class Article
     private $text;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="array")
      */
-    private $img;
+    private $img = [];
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -50,15 +50,13 @@ class Article
         return $this;
     }
 
-    public function getImg(): ?string
+    public function getImg(): ?array
     {
         return $this->img;
     }
-
-    public function setImg(?string $img): self
+    public function setImg(array $img): self
     {
         $this->img = $img;
-
         return $this;
     }
 
@@ -71,6 +69,12 @@ class Article
     {
         $this->title = $title;
 
+        return $this;
+    }
+
+    public function addImg(string $image): self
+    {
+        $this->img[] = $image;
         return $this;
     }
 }

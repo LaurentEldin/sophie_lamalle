@@ -71,6 +71,8 @@
     <parameter key="kernel.container_class">srcApp_KernelDevDebugContainer</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="container.dumper.inline_factories">true</parameter>
+    <parameter key="locale">fr</parameter>
+    <parameter key="uploads_directory">/Applications/MAMP/htdocs/sophie_lamalle/sophie_lamalle_psychologue/public/assets/uploaded_images</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
@@ -4895,6 +4897,12 @@
         <argument key="articleRepository" type="service" id="App\Repository\ArticleRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.x8FmIZ0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.WKL2avN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4915,18 +4923,20 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.ZJLoo4f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.izKjP8A" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ArticleController::delete" type="service" id=".service_locator.WKL2avN"/>
         <argument key="App\Controller\ArticleController::edit" type="service" id=".service_locator.WKL2avN"/>
         <argument key="App\Controller\ArticleController::index" type="service" id=".service_locator.Dx03tsO"/>
+        <argument key="App\Controller\ArticleController::new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController::show" type="service" id=".service_locator.WKL2avN"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ArticleController:delete" type="service" id=".service_locator.WKL2avN"/>
         <argument key="App\Controller\ArticleController:edit" type="service" id=".service_locator.WKL2avN"/>
         <argument key="App\Controller\ArticleController:index" type="service" id=".service_locator.Dx03tsO"/>
+        <argument key="App\Controller\ArticleController:new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController:show" type="service" id=".service_locator.WKL2avN"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
@@ -5338,12 +5348,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.ZJLoo4f"/>
+      <argument type="service" id=".service_locator.izKjP8A"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.ZJLoo4f"/>
+      <argument type="service" id=".service_locator.izKjP8A"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -5756,7 +5766,7 @@
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ZJLoo4f"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.izKjP8A"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

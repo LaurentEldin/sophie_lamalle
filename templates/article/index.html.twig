@@ -14,9 +14,7 @@
     {% for article in articles %}
         {% if loop.index is odd %}
             <article class="article2 row">
-                <img class="col img1"
-                     src="{{ article.img }}"
-                     alt="">
+                <img class="col img1" src="{{ asset('assets/uploaded_images' ~ article.img) }}" alt="">
                 <div class="divtxt col">
                     <h3>{{ article.title }}</h3>
                     <p>{{ article.text|raw }}</p>
@@ -35,9 +33,11 @@
                         <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Update</a>
                         <a class="buttonadmin" href="{{ path('article_delete', {'id': article.id}) }}">Supprimer</a>
                     {% endif %}
-                    <img class="col img1" src="{{ article.img }}" alt="">
+                    <img class="col img1" src="{{ asset('assets/uploaded_images' ~ article.img) }}" alt="">
+                    {{ dump(article.img) }}
                 </div>
             </article>
+            asset('uploads/brochures/' ~ product.brochureFilename)
         {% endif %}
     {% endfor %}
 {% endblock %}

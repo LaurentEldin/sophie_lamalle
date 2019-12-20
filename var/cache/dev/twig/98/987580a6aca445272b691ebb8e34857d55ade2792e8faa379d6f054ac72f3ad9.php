@@ -124,69 +124,72 @@ class __TwigTemplate_ce5df2eed71fe49fc9f4dde5a44c9f217c40dee917da2a66e93396e0ac1
             if ((twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 15) % 2 == 1)) {
                 // line 16
                 echo "            <article class=\"article2 row\">
-                <img class=\"col img1\"
-                     src=\"";
-                // line 18
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "img", [], "any", false, false, false, 18), "html", null, true);
-                echo "\"
-                     alt=\"\">
+                <img class=\"col img1\" src=\"";
+                // line 17
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/uploaded_images" . twig_get_attribute($this->env, $this->source, $context["article"], "img", [], "any", false, false, false, 17))), "html", null, true);
+                echo "\" alt=\"\">
                 <div class=\"divtxt col\">
                     <h3>";
-                // line 21
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 21), "html", null, true);
+                // line 19
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 19), "html", null, true);
                 echo "</h3>
                     <p>";
-                // line 22
-                echo twig_get_attribute($this->env, $this->source, $context["article"], "text", [], "any", false, false, false, 22);
+                // line 20
+                echo twig_get_attribute($this->env, $this->source, $context["article"], "text", [], "any", false, false, false, 20);
                 echo "</p>
                     ";
-                // line 23
+                // line 21
                 if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                    // line 24
+                    // line 22
                     echo "                        <a class=\"buttonadmin\" href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 22)]), "html", null, true);
                     echo "\">Update</a>
                         <a class=\"buttonadmin\" href=\"";
-                    // line 25
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+                    // line 23
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 23)]), "html", null, true);
                     echo "\">Supprimer</a>
                     ";
                 }
-                // line 27
+                // line 25
                 echo "                </div>
             </article>
         ";
             } else {
-                // line 30
+                // line 28
                 echo "            <article class=\"article2 row\">
                 <div class=\"divtxt col\">
                     <h3>";
-                // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 32), "html", null, true);
+                // line 30
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 30), "html", null, true);
                 echo "</h3>
                     <p>";
-                // line 33
-                echo twig_get_attribute($this->env, $this->source, $context["article"], "text", [], "any", false, false, false, 33);
+                // line 31
+                echo twig_get_attribute($this->env, $this->source, $context["article"], "text", [], "any", false, false, false, 31);
                 echo "</p>
                     ";
-                // line 34
+                // line 32
                 if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                    // line 35
+                    // line 33
                     echo "                        <a class=\"buttonadmin\" href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 33)]), "html", null, true);
                     echo "\">Update</a>
                         <a class=\"buttonadmin\" href=\"";
-                    // line 36
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+                    // line 34
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 34)]), "html", null, true);
                     echo "\">Supprimer</a>
                     ";
                 }
-                // line 38
+                // line 36
                 echo "                    <img class=\"col img1\" src=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "img", [], "any", false, false, false, 38), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/uploaded_images" . twig_get_attribute($this->env, $this->source, $context["article"], "img", [], "any", false, false, false, 36))), "html", null, true);
                 echo "\" alt=\"\">
+                    ";
+                // line 37
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, twig_get_attribute($this->env, $this->source, $context["article"], "img", [], "any", false, false, false, 37));
+                echo "
                 </div>
             </article>
+            asset('uploads/brochures/' ~ product.brochureFilename)
         ";
             }
             // line 42
@@ -223,7 +226,7 @@ class __TwigTemplate_ce5df2eed71fe49fc9f4dde5a44c9f217c40dee917da2a66e93396e0ac1
 
     public function getDebugInfo()
     {
-        return array (  193 => 42,  185 => 38,  180 => 36,  175 => 35,  173 => 34,  169 => 33,  165 => 32,  161 => 30,  156 => 27,  151 => 25,  146 => 24,  144 => 23,  140 => 22,  136 => 21,  130 => 18,  126 => 16,  123 => 15,  105 => 14,  101 => 12,  95 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  196 => 42,  188 => 37,  183 => 36,  178 => 34,  173 => 33,  171 => 32,  167 => 31,  163 => 30,  159 => 28,  154 => 25,  149 => 23,  144 => 22,  142 => 21,  138 => 20,  134 => 19,  129 => 17,  126 => 16,  123 => 15,  105 => 14,  101 => 12,  95 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -244,9 +247,7 @@ class __TwigTemplate_ce5df2eed71fe49fc9f4dde5a44c9f217c40dee917da2a66e93396e0ac1
     {% for article in articles %}
         {% if loop.index is odd %}
             <article class=\"article2 row\">
-                <img class=\"col img1\"
-                     src=\"{{ article.img }}\"
-                     alt=\"\">
+                <img class=\"col img1\" src=\"{{ asset('assets/uploaded_images' ~ article.img) }}\" alt=\"\">
                 <div class=\"divtxt col\">
                     <h3>{{ article.title }}</h3>
                     <p>{{ article.text|raw }}</p>
@@ -265,9 +266,11 @@ class __TwigTemplate_ce5df2eed71fe49fc9f4dde5a44c9f217c40dee917da2a66e93396e0ac1
                         <a class=\"buttonadmin\" href=\"{{ path('article_edit', {'id': article.id}) }}\">Update</a>
                         <a class=\"buttonadmin\" href=\"{{ path('article_delete', {'id': article.id}) }}\">Supprimer</a>
                     {% endif %}
-                    <img class=\"col img1\" src=\"{{ article.img }}\" alt=\"\">
+                    <img class=\"col img1\" src=\"{{ asset('assets/uploaded_images' ~ article.img) }}\" alt=\"\">
+                    {{ dump(article.img) }}
                 </div>
             </article>
+            asset('uploads/brochures/' ~ product.brochureFilename)
         {% endif %}
     {% endfor %}
 {% endblock %}
