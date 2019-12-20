@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'enregistrer{% endblock %}
+
+{% block body %}
+    <div class="mainindex">
+        <h1>S'en<strong>register</strong></h1>
+        <div class="login_form">
+            {{ form_start(registrationForm) }}
+            <div>{{ form_label(registrationForm.firstname) }}</div>
+            <div>{{ form_widget(registrationForm.firstname) }}</div>
+
+            <div>{{ form_label(registrationForm.lastname) }}</div>
+            <div>{{ form_widget(registrationForm.lastname) }}</div>
+
+            <div> {{ form_label(registrationForm.phone) }}</div>
+            <div> {{ form_widget(registrationForm.phone) }}</div>
+
+            <div>{{ form_label(registrationForm.email) }}</div>
+            <div>{{ form_widget(registrationForm.email) }}</div>
+
+            <div>{{ form_label(registrationForm.plainPassword) }}</div>
+            <div>{{ form_widget(registrationForm.plainPassword) }}</div>
+
+            <div class="row">
+                <div class="col">{{ form_widget(registrationForm.agreeTerms) }}</div>
+                <div class="col">{{ form_label(registrationForm.agreeTerms) }}</div>
+            </div>
+
+            <button class="btn btn-outline-dark float-right">S'enregistrer</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}

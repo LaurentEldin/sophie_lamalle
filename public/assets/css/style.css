@@ -1,0 +1,166 @@
+/*
+-----------------------------------------------------------------------------------------------------------------------
+--------------------------------------------          ALL PAGE          -----------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+ */
+@import url('https://fonts.googleapis.com/css?family=Gruppo|Muli:400,800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Muli', sans-serif;
+    /*font-family: 'Gruppo', cursive;*/
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+h1{
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+/*
+-----------------------------------------------------------------------------------------------------------------------
+--------------------------------------------          HEADER            -----------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+ */
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.navheader{
+    background-color: rgb(179, 95, 95);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    color: #c18638;
+}
+/*
+-----------------------------------------------------------------------------------------------------------------------
+--------------------------------------------          MAIN              -----------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+ */
+.img1{
+    height: 600px;
+    width: 600px;
+    margin: 0;
+    padding: 0;
+}
+.article2{
+    background-color: rgb(179, 95, 95);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.article2:nth-of-type(odd){
+    background-color: #f1f2f3;
+    color: rgb(179, 95, 95);
+}
+.article4{
+    background-color: #f1f2f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    color: rgb(179, 95, 95);
+}
+.article4 h1{
+    font-size: 50px;
+    padding: 20px;
+}
+.form{
+    padding-bottom: 200px;
+}
+.divtxt{
+    padding: 0 10vh;
+}
+.rdv{
+    padding: 10vh;
+}
+h1{
+    color: rgb(121, 24, 26);
+    padding: 100px;
+}
+.titreadmin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_form{
+    color: rgb(121, 24, 26);
+    padding-bottom: 50px;
+}
+.buttonadmin {
+    background-color: rgba(85,85,85,0.5);
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttonadmin:hover {
+    background-color: transparent;
+    color: black;
+}
+.form_contact{
+    padding: 20px;
+    width: 30%;
+}
+.nomprenom{
+    display: flex;
+    justify-content: space-between;
+}
+.phonemail{
+    display: flex;
+    justify-content: space-between;
+}
+.articlecontact{
+    background-color: rgb(179, 95, 95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.topic{
+    width: 100%;
+}
+.contactmail{
+    width: 100%;
+}
+/*
+-----------------------------------------------------------------------------------------------------------------------
+--------------------------------------------          FOOTER            -----------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+ */
+.navfooter{
+    /*background-color: rgb(10, 17, 27); DarkBlue à garde de côté au cas ou*/
+    background-color: rgb(179, 95, 95) /*rgb(26, 42, 67)*/ ;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    color: #c18638;
+}

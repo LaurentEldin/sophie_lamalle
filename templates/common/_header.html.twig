@@ -1,0 +1,12 @@
+<header>
+    <nav class="navheader">
+        <div><a href="{{ path('index') }}#presentation">Présentation </a></div>
+        <div><a href="{{ path('index') }}#pourquoivenir">Pourquoi venir</a></div>
+        <div><a href="{{ path('index') }}#methodes">Méthodes</a></div>
+        <div><a href="{{ path('index') }}#infos">Infos utiles</a></div>
+        <div><a href="{{ path('index') }}#reservation">Réservation</a></div>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_logout') }}">Logout</a>
+        {% endif %}
+    </nav>
+</header>
