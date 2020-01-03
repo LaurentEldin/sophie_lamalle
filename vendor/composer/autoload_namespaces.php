@@ -8,4 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'ProxyManager\\' => array($vendorDir . '/ocramius/proxy-manager/src'),
+    'Metadata\\' => array($vendorDir . '/jms/metadata/src'),
+    'Behat\\Transliterator' => array($vendorDir . '/behat/transliterator/src'),
 );

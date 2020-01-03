@@ -66,9 +66,9 @@ class __TwigTemplate_aa77c8f484d05428dc01c79b4637061824d2d4f4b3c5ef2e0583e4457ad
         // line 8
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 9
-            echo "        <a href=\"";
+            echo "        <div><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Logout</a>
+            echo "\">Deconnexion</a></div>
         ";
         }
         // line 11
@@ -107,7 +107,7 @@ class __TwigTemplate_aa77c8f484d05428dc01c79b4637061824d2d4f4b3c5ef2e0583e4457ad
         <div><a href=\"{{ path('index') }}#infos\">Infos utiles</a></div>
         <div><a href=\"{{ path('index') }}#reservation\">Réservation</a></div>
         {% if is_granted('ROLE_ADMIN') %}
-        <a href=\"{{ path('app_logout') }}\">Logout</a>
+        <div><a href=\"{{ path('app_logout') }}\">Deconnexion</a></div>
         {% endif %}
     </nav>
 </header>", "common/_header.html.twig", "/Applications/MAMP/htdocs/sophie_lamalle/sophie_lamalle_psychologue/templates/common/_header.html.twig");

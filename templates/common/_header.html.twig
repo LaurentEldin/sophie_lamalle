@@ -6,7 +6,7 @@
         <div><a href="{{ path('index') }}#infos">Infos utiles</a></div>
         <div><a href="{{ path('index') }}#reservation">Réservation</a></div>
         {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_logout') }}">Logout</a>
+        <div><a href="{{ path('app_logout') }}">Deconnexion</a></div>
         {% endif %}
     </nav>
 </header>

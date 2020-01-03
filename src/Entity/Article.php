@@ -3,10 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
+ * @Vich\Uploadable()
  */
 class Article
 {
@@ -24,14 +28,25 @@ class Article
     private $text;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $img = [];
+    private $filename;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="article_image", fileNameProperty="filename")
+     */
+    private $img;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $title;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -50,13 +65,18 @@ class Article
         return $this;
     }
 
-    public function getImg(): ?array
+    public function getImg(): ?File
     {
         return $this->img;
     }
-    public function setImg(array $img): self
+    public function setImg($img): self
     {
         $this->img = $img;
+        // Only change the updated af if the file is really uploaded to avoid database updates.
+        // This is needed when the file should be set when loading the entity.
+        if ($this->img instanceof UploadedFile) {
+            $this->updated_at = new \DateTime('now');
+        }
         return $this;
     }
 
@@ -72,9 +92,32 @@ class Article
         return $this;
     }
 
-    public function addImg(string $image): self
+    /**
+     * @return mixed
+     */
+    public function getFilename()
     {
-        $this->img[] = $image;
+        return $this->filename;
+    }
+
+    /**
+     * @param mixed $filename
+     */
+    public function setFilename($filename): void
+    {
+        $this->filename = $filename;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
         return $this;
     }
+
 }

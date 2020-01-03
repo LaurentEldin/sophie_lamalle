@@ -105,26 +105,37 @@ class __TwigTemplate_dd38408a0af41a59c4bc1bd84ada50b5e2f5d6157be1a6287f104bdf181
             </tr>
             <tr>
                 <th>Img</th>
-                <td>";
+                ";
         // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 20, $this->source); })()), "img", [], "any", false, false, false, 20), "html", null, true);
-        echo "</td>
-            </tr>
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 20, $this->source); })()), "img", [], "any", false, false, false, 20));
+        foreach ($context['_seq'] as $context["_key"] => $context["img"]) {
+            // line 21
+            echo "                <td>";
+            echo twig_escape_filter($this->env, ($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/uploaded_images/") . twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 21, $this->source); })()), "img", [], "any", false, false, false, 21)), "html", null, true);
+            echo "</td>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['img'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 23
+        echo "            </tr>
         </tbody>
     </table>
 
     <a href=\"";
-        // line 25
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 27
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 29, $this->source); })()), "id", [], "any", false, false, false, 29)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 29
+        // line 31
         echo twig_include($this->env, $context, "article/_delete_form.html.twig");
         echo "
 ";
@@ -148,7 +159,7 @@ class __TwigTemplate_dd38408a0af41a59c4bc1bd84ada50b5e2f5d6157be1a6287f104bdf181
 
     public function getDebugInfo()
     {
-        return array (  128 => 29,  123 => 27,  118 => 25,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 31,  134 => 29,  129 => 27,  123 => 23,  114 => 21,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -172,7 +183,9 @@ class __TwigTemplate_dd38408a0af41a59c4bc1bd84ada50b5e2f5d6157be1a6287f104bdf181
             </tr>
             <tr>
                 <th>Img</th>
-                <td>{{ article.img }}</td>
+                {% for img in article.img %}
+                <td>{{ asset('assets/uploaded_images/') ~ article.img }}</td>
+                {% endfor %}
             </tr>
         </tbody>
     </table>

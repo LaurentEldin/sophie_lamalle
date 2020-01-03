@@ -4,32 +4,35 @@
 -----------------------------------------------------------------------------------------------------------------------
  */
 @import url('https://fonts.googleapis.com/css?family=Gruppo|Muli:400,800&display=swap');
+
+/* l'asterix permet d'affecter l'ensemble de la page web.*/
 *{
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     font-family: 'Muli', sans-serif;
-    /*font-family: 'Gruppo', cursive;*/
-
 }
-a{
-    text-decoration: none;
-    color: white;
-}
-a:hover{
-    color: black;
-    text-decoration: none;
-}
+/* Sélectionnera tout les H1 qui seront présent dans mon html */
 h1{
     align-self: center;
     justify-self: center;
     text-align: center;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Le hover permet de faire un affichage différent de celui d'origine quand on solicite l'élément cité */
+a:hover{
+    text-decoration: none;
 }
 /*
 -----------------------------------------------------------------------------------------------------------------------
 --------------------------------------------          HEADER            -----------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
  */
+
+/* Permet d'avoir un header qui reste en haut malgré le scroll */
 header{
     position: sticky;
     top: 0;
@@ -43,6 +46,17 @@ header{
     align-items: center;
     height: 10vh;
     color: #c18638;
+}
+.navheader a{
+    transform: scale(1,0);
+    transition: all 200ms ease-in;
+    color: white;
+}
+.navheader a:hover{
+    transform: scale(1.2);
+    transition: all 200ms ease-in;
+    color: black;
+    text-decoration: none;
 }
 /*
 -----------------------------------------------------------------------------------------------------------------------
@@ -103,11 +117,15 @@ h1{
 .login_form{
     color: rgb(121, 24, 26);
     padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
 }
 .buttonadmin {
     background-color: rgba(85,85,85,0.5);
     color: black;
-    border: 2px solid #555555;
     border-radius: 5px;
     border: 1px solid black;
     padding: 16px 32px;
@@ -163,4 +181,15 @@ h1{
     align-items: center;
     height: 10vh;
     color: #c18638;
+}
+.navfooter a{
+    transform: scale(1,0);
+    transition: all 200ms ease-in;
+    color: white;
+}
+.navfooter a:hover{
+    transform: scale(1.2);
+    transition: all 200ms ease-in;
+    color: black;
+    text-decoration: none;
 }

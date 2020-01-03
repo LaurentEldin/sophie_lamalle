@@ -17,7 +17,9 @@
             </tr>
             <tr>
                 <th>Img</th>
-                <td>{{ asset('assets/uploaded_images') ~ '/'~image }}</td>
+{#                {% for img in article.img %}#}
+                <td>{{ asset('assets/uploaded_images/') ~ article.filename }}</td>
+{#                {% endfor %}#}
             </tr>
         </tbody>
     </table>

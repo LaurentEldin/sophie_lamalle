@@ -27,7 +27,7 @@
         "symfony/validator": "4.4.*",
         "symfony/web-link": "4.4.*",
         "symfony/yaml": "4.4.*",
-      "ext-intl": "*"
+        "vich/uploader-bundle": "^1.8"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
