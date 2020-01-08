@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerJkcgx8m/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerCtxJrm0/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'App\Kernel';
@@ -58,6 +58,7 @@ $classes[] = 'Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector'
 $classes[] = 'Symfony\Bridge\Twig\DataCollector\TwigDataCollector';
 $classes[] = 'Symfony\Component\HttpClient\DataCollector\HttpClientDataCollector';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector';
+$classes[] = 'Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector';
 $classes[] = 'Symfony\Component\Mailer\DataCollector\MessageDataCollector';
 $classes[] = 'Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\ProfilerListener';
