@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Contact;
 use App\Form\ArticleType;
+use App\Form\ContactType;
 use App\Repository\ArticleRepository;
+use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,15 +28,44 @@ class ArticleController extends AbstractController
     /**
      * @Route("/", name="article_index")
      * @param ArticleRepository $articleRepository
+     * @param CategoriesRepository $categoriesRepository
      * @return Response
      */
-    public function index(ArticleRepository $articleRepository): Response
+    public function index(ArticleRepository $articleRepository, CategoriesRepository $categoriesRepository): Response
     {
+        $categorie = $categoriesRepository->findAll();
         $article = $articleRepository->findAll();
+        $contactType = New ContactType();
+        $contact = New Contact();
+
+        $form = $this->createForm(ContactType::class);
+        if($form->isSubmitted() &&  $form->isValid()){
+            $firstname = $form['firstname']->getData();
+            $lastname = $form['lastname']->getData();
+            $phone = $form['phone']->getData();
+            $email = $form['email']->getData();
+            $topic = $form['topic']->getData();
+            $message = $form['message']->getData();
+            # set form data
+            $contact->setFirstname($firstname);
+            $contact->setLastname($lastname);
+            $contact->setPhone($phone);
+            $contact->setEmail($email);
+            $contact->setTopic($topic);
+            $contact->setMessage($message);
+            # finally add data in database
+            $sn = $this->getDoctrine()->getManager();
+            $sn -> persist($contact);
+            $sn -> flush();
+        }
+
         return $this->render('article/index.html.twig', [
-            'articles' => $article
+            'articles' => $article,
+            'categories' => $categorie,
+            'form' => $form->createView()
         ]);
     }
+
 
 /*
 ----------------------------------------------------------------------------------------------------------------------
@@ -120,7 +152,7 @@ class ArticleController extends AbstractController
 
 /*
 ----------------------------------------------------------------------------------------------------------------------
----------------------------------                DELETE ONE ARTICLE                -----------------------------------
+---------------------------------                DELETE ARTICLE                -----------------------------------
 ----------------------------------------------------------------------------------------------------------------------
 */
 

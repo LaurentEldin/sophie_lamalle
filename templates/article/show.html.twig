@@ -4,29 +4,24 @@
 
 {% block body %}
     <h1>Article</h1>
-
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Id de l'article</th>
                 <td>{{ article.id }}</td>
             </tr>
             <tr>
-                <th>Text</th>
-                <td>{{ article.text }}</td>
+                <th>Paragrape de l'article</th>
+                <td>{{ article.text|raw }}</td>
             </tr>
             <tr>
-                <th>Img</th>
-{#                {% for img in article.img %}#}
-                <td>{{ asset('assets/uploaded_images/') ~ article.filename }}</td>
-{#                {% endfor %}#}
+                <th>Image de l'article</th>
+                <td><img src="{{ asset('assets/uploaded_images/') ~ article.filename }}" alt=""></td>
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('article_index') }}">back to list</a>
-
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-
+    <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Éditer</a>
+    <br>
     {{ include('article/_delete_form.html.twig') }}
+    <a class="buttonadmin" href="{{ path('article_index') }}">Retour</a>
 {% endblock %}

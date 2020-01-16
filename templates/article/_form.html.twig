@@ -1,7 +1,26 @@
 
 <div class="article2">
     {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="categorie">
+        <div>{{ form_label(form.categorie) }}</div>
+        <div>{{ form_widget(form.categorie) }}</div>
+    </div>
+    <br>
+    <div class="titre">
+        <div>{{ form_label(form.title) }}</div>
+        <div>{{ form_widget(form.title) }}</div>
+    </div>
+    <br>
+    <div class="text">
+        <div>{{ form_label(form.text) }}</div>
+        <div>{{ form_widget(form.text) }}</div>
+    </div>
+    <br>
+    <div class="img">
+        <div>{{ form_label(form.img) }}</div>
+        <div>{{ form_widget(form.img) }}</div>
+    </div>
+    <br>
+    <button class="buttonadmin">{{ button_label|default('Sauvegarder') }}</button>
     {{ form_end(form) }}
 </div>

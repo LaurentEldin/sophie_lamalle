@@ -16,9 +16,10 @@ class IndexController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function showIndex()
+    public function showContact()
     {
-        $contact = New ContactType();
+        $contactType = New ContactType();
+        $contact = New Contact();
 
         $form = $this->createForm(ContactType::class);
         if($form->isSubmitted() &&  $form->isValid()){
@@ -30,7 +31,7 @@ class IndexController extends AbstractController
             $message = $form['message']->getData();
             # set form data
             $contact->setFirstname($firstname);
-            $contact->setLastame($lastname);
+            $contact->setLastname($lastname);
             $contact->setPhone($phone);
             $contact->setEmail($email);
             $contact->setTopic($topic);

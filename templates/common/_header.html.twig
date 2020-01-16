@@ -1,10 +1,19 @@
 <header>
     <nav class="navheader">
-        <div><a href="{{ path('index') }}#presentation">Présentation </a></div>
-        <div><a href="{{ path('index') }}#pourquoivenir">Pourquoi venir</a></div>
-        <div><a href="{{ path('index') }}#methodes">Méthodes</a></div>
-        <div><a href="{{ path('index') }}#infos">Infos utiles</a></div>
-        <div><a href="{{ path('index') }}#reservation">Réservation</a></div>
+        <div>
+            <a class="{% if categories is defined and categories == 'Présentation' %}active{% endif %}" href="#Présentation">Présentation </a>
+        </div>
+        <div>
+            <a class="{% if categories is defined and categories == 'Pourquoi venir?' %}active{% endif %}" href="#Pourquoi venir?">Pourquoi <strong>venir</strong></a>
+        </div>
+        <div>
+            <a class="{% if categories is defined and categories == 'Méthodes' %}active{% endif %}" href="#Méthodes">Méthodes</a>
+        </div>
+        <div>
+            <a class="{% if categories is defined and categories == 'Tarifs' %}active{% endif %}" href="#Tarifs">Tarifs</a>
+        </div>
+        <div><a href="{{ path('article_index') }}#infos">Infos <strong>utiles</strong></a></div>
+        <div><a href="{{ path('article_index') }}#reservation">Réservation</a></div>
         {% if is_granted('ROLE_ADMIN') %}
         <div><a href="{{ path('app_logout') }}">Deconnexion</a></div>
         {% endif %}

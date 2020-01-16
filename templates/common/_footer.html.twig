@@ -1,7 +1,7 @@
 <footer>
     <nav class="navfooter">
-        <div><a href="">Plan</a></div>
-        <div><a href="">Contact</a></div>
-        <div><a href="">Tarifs</a></div>
-    </nav>
+        <div><a href="https://www.doctolib.fr/psychologue/royan/sophie-lamalle" target="_blank">Doctolib</a></div>
+        <div><a href="{{ path('article_index') }}#reservation">Contact</a></div>
+        <div><a class="{% if categories is defined and categories == 'Présentation' %}active{% endif %}" href="#Présentation">Accueil</a></div>
+</nav>
 </footer>
