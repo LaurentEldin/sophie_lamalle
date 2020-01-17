@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bfc50defadafc2ad43b14dabbb82f6f",
+    "content-hash": "804b816d0a48ee0696ce7d5663550f86",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -5659,16 +5659,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.4.1",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "0a89a1dbbedd9fb2cfb2336556dec8305273c19a"
+                "reference": "be330f919bdb395d1e0c3f2bfb8948512d6bdd99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0a89a1dbbedd9fb2cfb2336556dec8305273c19a",
-                "reference": "0a89a1dbbedd9fb2cfb2336556dec8305273c19a",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/be330f919bdb395d1e0c3f2bfb8948512d6bdd99",
+                "reference": "be330f919bdb395d1e0c3f2bfb8948512d6bdd99",
                 "shasum": ""
             },
             "require": {
@@ -5731,7 +5731,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-11-28T13:33:56+00:00"
+            "time": "2019-12-18T13:41:29+00:00"
         },
         {
             "name": "symfony/var-exporter",

@@ -2463,6 +2463,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -5447,7 +5455,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.wRuwFjy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.MARmkPr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ArticleController::delete" type="service" id=".service_locator.WKL2avN"/>
@@ -5455,7 +5463,7 @@
         <argument key="App\Controller\ArticleController::index" type="service" id=".service_locator.EsHmdMT"/>
         <argument key="App\Controller\ArticleController::new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController::show" type="service" id=".service_locator.WKL2avN"/>
-        <argument key="App\Controller\IndexController::showContact" type="service" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\IndexController::sendMail" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ArticleController:delete" type="service" id=".service_locator.WKL2avN"/>
@@ -5463,7 +5471,7 @@
         <argument key="App\Controller\ArticleController:index" type="service" id=".service_locator.EsHmdMT"/>
         <argument key="App\Controller\ArticleController:new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController:show" type="service" id=".service_locator.WKL2avN"/>
-        <argument key="App\Controller\IndexController:showContact" type="service" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\IndexController:sendMail" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
       </argument>
@@ -5878,12 +5886,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.wRuwFjy"/>
+      <argument type="service" id=".service_locator.MARmkPr"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.wRuwFjy"/>
+      <argument type="service" id=".service_locator.MARmkPr"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6340,7 +6348,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.wRuwFjy"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.MARmkPr"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

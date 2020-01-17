@@ -3,9 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Entity\Contact;
 use App\Form\ArticleType;
-use App\Form\ContactType;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;

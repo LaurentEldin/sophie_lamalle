@@ -29,23 +29,14 @@ class IndexController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() &&  $form->isValid()){
 
-            $data = $form->getData();
-
-            $contact->setFirstname($data['firstname']);
-            $contact->setLastname($data['lastname']);
-            $contact->setPhone($data['phone']);
-            $contact->setEmail($data['email']);
-            $contact->setTopic($data['topic']);
-            $contact->setMessage($data['message']);
-
             $entityManager->persist($contact);
             $entityManager->flush();
 
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('article_index');
         }
 
-        return $this->render('public/index.html.twig', [
-            'form' => $form->createView()
+        return $this->render('article/index.html.twig', [
+            'forms' => $form->createView()
         ]);
     }
 }

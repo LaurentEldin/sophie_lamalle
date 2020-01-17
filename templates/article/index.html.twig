@@ -62,40 +62,40 @@
     <div class="titreadmin">
         <h1 id="reservation">Réservations</h1>
     </div>
-    <article class="article2">
-        <form action="" class="form_contact">
-            <h3>Demande de <strong>contact</strong></h3>
-            {{ form_start(form) }}
-            <div class="nomprenom">
-                <div>
-                    <div>{{ form_label(form.firstname) }}</div>
-                    <div>{{ form_widget(form.firstname) }}</div>
-                </div>
-                <div>
-                    <div>{{ form_label(form.lastname) }}</div>
-                    <div>{{ form_widget(form.lastname) }}</div>
-                </div>
-            </div>
-            <div class="phonemail">
-                <div>
-                    <div>{{ form_label(form.phone) }}</div>
-                    <div>{{ form_widget(form.phone) }}</div>
-                </div>
-                <div>
-                    <div>{{ form_label(form.email) }}</div>
-                    <div>{{ form_widget(form.email) }}</div>
-                </div>
-            </div>
-            <div>{{ form_label(form.topic) }}</div>
-            <div>{{ form_widget(form.topic) }}</div>
+{#    <article class="article2">#}
+{#        <form action="" class="form_contact">#}
+{#            <h3>Demande de <strong>contact</strong></h3>#}
+{#            {{ form_start(forms) }}#}
+{#            <div class="nomprenom">#}
+{#                <div>#}
+{#                    <div>{{ form_label(forms.firstname) }}</div>#}
+{#                    <div>{{ form_widget(forms.firstname) }}</div>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <div>{{ form_label(forms.lastname) }}</div>#}
+{#                    <div>{{ form_widget(forms.lastname) }}</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="phonemail">#}
+{#                <div>#}
+{#                    <div>{{ form_label(forms.phone) }}</div>#}
+{#                    <div>{{ form_widget(forms.phone) }}</div>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <div>{{ form_label(forms.email) }}</div>#}
+{#                    <div>{{ form_widget(forms.email) }}</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div>{{ form_label(forms.topic) }}</div>#}
+{#            <div>{{ form_widget(forms.topic) }}</div>#}
 
-            <div>{{ form_label(form.message) }}</div>
-            <div>{{ form_widget(form.message) }}</div>
+{#            <div>{{ form_label(forms.message) }}</div>#}
+{#            <div>{{ form_widget(forms.message) }}</div>#}
 
-            <button type="submit" class="buttonadmin float-right">Envoyer</button>
-            {{ form_end(form) }}
-        </form>
-    </article>
+{#            <button type="submit" class="buttonadmin float-right">Envoyer</button>#}
+{#            {{ form_end(forms) }}#}
+{#        </form>#}
+{#    </article>#}
     <article class="article2">
         <div class="rdv">
             <h3>Prise de <strong>rendez-vous</strong></h3>
