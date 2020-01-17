@@ -373,11 +373,11 @@
         <argument type="service" id=".service_locator.WkgBPi_.App\Controller\ArticleController"/>
       </call>
     </service>
-    <service id="App\Controller\IndexController" class="App\Controller\IndexController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ContactController" class="App\Controller\ContactController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.WkgBPi_.App\Controller\IndexController"/>
+        <argument type="service" id=".service_locator.WkgBPi_.App\Controller\ContactController"/>
       </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
@@ -5208,9 +5208,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5433,9 +5433,11 @@
         <argument key="article" type="service" id=".errored..service_locator.WKL2avN.App\Entity\Article"/>
       </argument>
     </service>
-    <service id=".service_locator.t4zBQ5b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.xOd.Zkf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="articleRepository" type="service" id="App\Repository\ArticleRepository"/>
+        <argument key="categoriesRepository" type="service" id="App\Repository\CategoriesRepository"/>
         <argument key="entityManager" type="service" id="doctrine.orm.default_entity_manager"/>
         <argument key="mailer" type="service" id="swiftmailer.mailer.default"/>
       </argument>
@@ -5454,7 +5456,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.0q_Lmr1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.gkBuuaX" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ArticleController::delete" type="service" id=".service_locator.WKL2avN"/>
@@ -5462,7 +5464,7 @@
         <argument key="App\Controller\ArticleController::index" type="service" id=".service_locator.EsHmdMT"/>
         <argument key="App\Controller\ArticleController::new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController::show" type="service" id=".service_locator.WKL2avN"/>
-        <argument key="App\Controller\IndexController::sendMail" type="service" id=".service_locator.t4zBQ5b"/>
+        <argument key="App\Controller\ContactController::sendMail" type="service" id=".service_locator.xOd.Zkf"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ArticleController:delete" type="service" id=".service_locator.WKL2avN"/>
@@ -5470,7 +5472,7 @@
         <argument key="App\Controller\ArticleController:index" type="service" id=".service_locator.EsHmdMT"/>
         <argument key="App\Controller\ArticleController:new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController:show" type="service" id=".service_locator.WKL2avN"/>
-        <argument key="App\Controller\IndexController:sendMail" type="service" id=".service_locator.t4zBQ5b"/>
+        <argument key="App\Controller\ContactController:sendMail" type="service" id=".service_locator.xOd.Zkf"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
       </argument>
@@ -5770,9 +5772,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WkgBPi_" method="withContext"/>
     </service>
-    <service id=".service_locator.WkgBPi_.App\Controller\IndexController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\IndexController"/>
-      <argument>App\Controller\IndexController</argument>
+    <service id=".service_locator.WkgBPi_.App\Controller\ContactController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ContactController"/>
+      <argument>App\Controller\ContactController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WkgBPi_" method="withContext"/>
     </service>
@@ -5885,12 +5887,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.0q_Lmr1"/>
+      <argument type="service" id=".service_locator.gkBuuaX"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.0q_Lmr1"/>
+      <argument type="service" id=".service_locator.gkBuuaX"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6347,7 +6349,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.0q_Lmr1"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.gkBuuaX"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

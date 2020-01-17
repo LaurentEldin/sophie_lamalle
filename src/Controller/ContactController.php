@@ -5,6 +5,8 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\ArticleRepository;
+use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -13,17 +15,21 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class IndexController extends AbstractController
+class ContactController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="article_index", methods={"GET","POST"})
+     * @param ArticleRepository $articleRepository
+     * @param CategoriesRepository $categoriesRepository
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @param \Swift_Mailer $mailer
      * @return RedirectResponse|Response
      */
-    public function sendMail(Request $request, EntityManagerInterface $entityManager, \Swift_Mailer $mailer)
+    public function sendMail(ArticleRepository $articleRepository, CategoriesRepository $categoriesRepository,Request $request, EntityManagerInterface $entityManager, \Swift_Mailer $mailer)
     {
+        $categorie = $categoriesRepository->findAll();
+        $article = $articleRepository->findAll();
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
 
@@ -45,12 +51,14 @@ class IndexController extends AbstractController
 
                 $this->addFlash('success', 'Votre demande a été envoyé avec succès.');
 
-                return $this->redirectToRoute('index');
+                return $this->redirectToRoute('article_index');
             }
         }
 
-        return $this->render('public/index.html.twig', [
-            'forms' => $form->createView()
+        return $this->render('article/index.html.twig', [
+            'forms' => $form->createView(),
+            'articles' => $article,
+            'categories' => $categorie
         ]);
     }
 }
