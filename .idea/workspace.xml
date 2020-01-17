@@ -4,15 +4,8 @@
     <list default="true" id="cd274040-0936-4adf-907a-7a5685a8cab0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/_footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.preload.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.preload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/dev.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +28,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -213,7 +211,7 @@
       <workItem from="1578476585735" duration="398000" />
       <workItem from="1578487587304" duration="95000" />
       <workItem from="1578487703846" duration="190000" />
-      <workItem from="1578487916669" duration="39871000" />
+      <workItem from="1578487916669" duration="41507000" />
     </task>
     <task id="LOCAL-00001" summary="commit 1">
       <created>1576840196590</created>
@@ -271,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579254214021</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Sending an email : OK">
+      <created>1579272356112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1579272356113</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +291,8 @@
     <MESSAGE value="Test swiftmailer / pb save data:contact" />
     <MESSAGE value="categorie repo" />
     <MESSAGE value="categorie repo et entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="categorie repo et entity" />
+    <MESSAGE value="Sending an email : OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sending an email : OK" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="114" key="#Inspections" timestamp="1576848714698">
@@ -301,10 +307,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="211" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579185012438" />
-    <state x="235" y="0" width="951" height="877" key="CommitChangelistDialog2" timestamp="1579272353990">
+    <state x="254" y="0" width="951" height="877" key="CommitChangelistDialog2" timestamp="1579278329030">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579272353990" />
+    <state x="254" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579278329030" />
     <state x="235" y="23" width="951" height="877" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1579254144744" />
     <state x="347" y="256" key="NewPhpClassDialog" timestamp="1576510767338">
       <screen x="0" y="0" width="1440" height="900" />
@@ -319,10 +325,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="572" y="364" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1579214284517" />
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1579254215440">
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1579272357933">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579254215440" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579272357933" />
     <state x="320" y="185" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1576840204570" />
     <state x="399" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578487916721">
       <screen x="0" y="0" width="1440" height="900" />

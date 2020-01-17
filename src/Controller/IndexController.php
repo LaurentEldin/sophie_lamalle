@@ -43,6 +43,8 @@ class IndexController extends AbstractController
                         ->setBody('Vous avez une demande de contact. Nom: '.$contact->getFirstname().' , '.$contact->getLastname().'. Tel: '.$contact->getPhone().' ; mail: '.$contact->getEmail().'. Sujet: '.$contact->getTopic().'. Message: ' .$contact->getMessage(). '.','text/html');
                 $mailer->send($message);
 
+                $this->addFlash('success', 'Votre demande a été envoyé avec succès.');
+
                 return $this->redirectToRoute('index');
             }
         }

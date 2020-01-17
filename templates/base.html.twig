@@ -9,7 +9,15 @@
         <link rel="stylesheet" href="{{ asset('assets/js/script.js') }}">
     {% endblock %}
 </head>
+
 <body>
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success mb-0">
+        <h4 class="alert-heading">Merci</h4>
+        <hr>
+        {{ message }}
+    </div>
+{% endfor %}
 {% include 'common/_header.html.twig' %}
 {% block body %}{% endblock %}
 {% include 'common/_footer.html.twig' %}
