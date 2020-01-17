@@ -3,106 +3,108 @@
 {% block title %}Articles{% endblock %}
 
 {% block body %}
-    {% for categorie in categories %}
-        {% if is_granted('ROLE_ADMIN') %}
-            <div class="titreadmin">
-                <h1 id="{{ categorie.libelle }}">{{ categorie.libelle }}</h1>
-                <a href="{{ path('article_new') }}" class="buttonadmin">Créer un article</a>
-            </div>
-        {% else %}
-            <h1 id="presentation">{{ categorie.libelle }}</h1>
-        {% endif %}
-        {% for article in categorie.articles %}
-            {% if loop.index is odd %}
-                <article class="article2 row">
-                    <img class="col img1" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
-                    <div class="divtxt col">
-                        <h3>{{ article.title|raw }}</h3>
-                        <p>{{ article.text|raw }}</p>
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
-                            <a class="buttonadmin" href="{{ path('article_delete', {'id': article.id}) }}">Supprimer</a>
-                        {% endif %}
-                    </div>
-                </article>
+    <body>
+        {% for categorie in categories %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="titreadmin">
+                    <h1 id="{{ categorie.libelle }}">{{ categorie.libelle }}</h1>
+                    <a href="{{ path('article_new') }}" class="buttonadmin">Créer un article</a>
+                </div>
             {% else %}
-                <article class="article2 row">
-                    <div class="divtxt col">
-                        <h3>{{ article.title|raw }}</h3>
-                        <p>{{ article.text|raw }}</p>
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
-                            <a class="buttonadmin" href="{{ path('article_delete', {'id': article.id}) }}">Supprimer</a>
-                        {% endif %}
-                    </div>
-                    <img class="col img1" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
-                </article>
+                <h1 id="{{ categorie.libelle }}">{{ categorie.libelle }}</h1>
             {% endif %}
+            {% for article in categorie.articles %}
+                {% if loop.index is odd %}
+                    <article class="article2 row justify-content-center justify-content-xl-start align-items-center">
+                        <img class="offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
+                        <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 divtxt">
+                            <h3>{{ article.title|raw }}</h3>
+                            <p>{{ article.text|raw }}</p>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
+                                <a class="buttonadmin" href="{{ path('article_delete', {'id': article.id}) }}">Supprimer</a>
+                            {% endif %}
+                        </div>
+                    </article>
+                {% else %}
+                    <article class="article2 row justify-content-center justify-content-xl-end align-items-center">
+                        <div class="order-last order-xl-first col-sm-12 col-md-10 col-lg-8 col-xl-6 divtxt">
+                            <h3>{{ article.title|raw }}</h3>
+                            <p>{{ article.text|raw }}</p>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
+                                <a class="buttonadmin" href="{{ path('article_delete', {'id': article.id}) }}">Supprimer</a>
+                            {% endif %}
+                        </div>
+                        <img class="order-first order-xl-last offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
+                    </article>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-
-    <h1 id="infos">Infos utiles</h1>
-    <article class="row article2">
-        <div class="map-responsive col-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.807814261591!2d-1.032644584436852!3d45.634596979103286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480177e624ecb04f%3A0x287681f9d3434b9a!2sSophie%20Lamalle!5e0!3m2!1sfr!2sfr!4v1576242339914!5m2!1sfr!2sfr" width="600px" height="450px" frameborder="0" style="border:0;" allowfullscreen="">
-            </iframe>
-        </div>
-        <div class="offset-2 col-4">
-            <div>
-                <h3 class="col-12"><strong>Accès</strong> & <strong>Informations</strong></h3>
-                <ul class="col-12">
-                    <li>Places de <strong>parking</strong></li>
-                    <li>Accessibilité <strong>PMR</strong></li>
-                    <li>Uniquement sur <strong>rendez-vous</strong></li>
-                    <li>Joignable au : <strong>06.22.82.95.04</strong></li>
-                </ul>
+        <h1 id="infos">Infos utiles</h1>
+        <article class="row article2">
+            <div class="map-responsive col-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.807814261591!2d-1.032644584436852!3d45.634596979103286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480177e624ecb04f%3A0x287681f9d3434b9a!2sSophie%20Lamalle!5e0!3m2!1sfr!2sfr!4v1576242339914!5m2!1sfr!2sfr" width="600px" height="450px" frameborder="0" style="border:0;" allowfullscreen="">
+                </iframe>
             </div>
+            <div class="offset-2 col-4">
+                <div>
+                    <h3 class="col-12"><strong>Accès</strong> & <strong>Informations</strong></h3>
+                    <ul class="col-12">
+                        <li>Places de <strong>parking</strong></li>
+                        <li>Accessibilité <strong>PMR</strong></li>
+                        <li>Uniquement sur <strong>rendez-vous</strong></li>
+                        <li>Joignable au : <strong>06.22.82.95.04</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <div class="titreadmin">
+            <h1 id="reservation">Réservations</h1>
         </div>
-    </article>
-    <div class="titreadmin">
-        <h1 id="reservation">Réservations</h1>
-    </div>
-{#    <article class="article2">#}
-{#        <form action="" class="form_contact">#}
-{#            <h3>Demande de <strong>contact</strong></h3>#}
-{#            {{ form_start(forms) }}#}
-{#            <div class="nomprenom">#}
-{#                <div>#}
-{#                    <div>{{ form_label(forms.firstname) }}</div>#}
-{#                    <div>{{ form_widget(forms.firstname) }}</div>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <div>{{ form_label(forms.lastname) }}</div>#}
-{#                    <div>{{ form_widget(forms.lastname) }}</div>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="phonemail">#}
-{#                <div>#}
-{#                    <div>{{ form_label(forms.phone) }}</div>#}
-{#                    <div>{{ form_widget(forms.phone) }}</div>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <div>{{ form_label(forms.email) }}</div>#}
-{#                    <div>{{ form_widget(forms.email) }}</div>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div>{{ form_label(forms.topic) }}</div>#}
-{#            <div>{{ form_widget(forms.topic) }}</div>#}
+        {#    <article class="article2">#}
+        {#        <form action="" class="form_contact">#}
+        {#            <h3>Demande de <strong>contact</strong></h3>#}
+        {#            {{ form_start(forms) }}#}
+        {#            <div class="nomprenom">#}
+        {#                <div>#}
+        {#                    <div>{{ form_label(forms.firstname) }}</div>#}
+        {#                    <div>{{ form_widget(forms.firstname) }}</div>#}
+        {#                </div>#}
+        {#                <div>#}
+        {#                    <div>{{ form_label(forms.lastname) }}</div>#}
+        {#                    <div>{{ form_widget(forms.lastname) }}</div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div class="phonemail">#}
+        {#                <div>#}
+        {#                    <div>{{ form_label(forms.phone) }}</div>#}
+        {#                    <div>{{ form_widget(forms.phone) }}</div>#}
+        {#                </div>#}
+        {#                <div>#}
+        {#                    <div>{{ form_label(forms.email) }}</div>#}
+        {#                    <div>{{ form_widget(forms.email) }}</div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div>{{ form_label(forms.topic) }}</div>#}
+        {#            <div>{{ form_widget(forms.topic) }}</div>#}
 
-{#            <div>{{ form_label(forms.message) }}</div>#}
-{#            <div>{{ form_widget(forms.message) }}</div>#}
+        {#            <div>{{ form_label(forms.message) }}</div>#}
+        {#            <div>{{ form_widget(forms.message) }}</div>#}
 
-{#            <button type="submit" class="buttonadmin float-right">Envoyer</button>#}
-{#            {{ form_end(forms) }}#}
-{#        </form>#}
-{#    </article>#}
-    <article class="article2">
-        <div class="rdv">
-            <h3>Prise de <strong>rendez-vous</strong></h3>
-            <p>Vous pouvez voir mes disponibilités à la semaine.</p>
-            <p>Vous pouvez également réserver une séance directement via Doctolib.</p>
-            <p>Vous recevrez une confirmation de prise de rendez-vous.</p>
-            <a href="https://www.doctolib.fr/psychologue/royan/sophie-lamalle" target="_blank" class="buttonadmin float-right">Réservation</a>
-        </div>
-    </article>
+        {#            <button type="submit" class="buttonadmin float-right">Envoyer</button>#}
+        {#            {{ form_end(forms) }}#}
+        {#        </form>#}
+        {#    </article>#}
+        <article class="article2">
+            <div class="rdv">
+                <h3>Prise de <strong>rendez-vous</strong></h3>
+                <p>Vous pouvez voir mes disponibilités à la semaine.</p>
+                <p>Vous pouvez également réserver une séance directement via Doctolib.</p>
+                <p>Vous recevrez une confirmation de prise de rendez-vous.</p>
+                <a href="https://www.doctolib.fr/psychologue/royan/sophie-lamalle" target="_blank"
+                   class="buttonadmin float-right">Réservation</a>
+            </div>
+        </article>
+    </body>
 {% endblock %}

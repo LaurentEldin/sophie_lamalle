@@ -19,23 +19,35 @@ class IndexController extends AbstractController
      * @Route("/", name="index")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
+     * @param \Swift_Mailer $mailer
      * @return RedirectResponse|Response
      */
-    public function sendMail(Request $request, EntityManagerInterface $entityManager)
+    public function sendMail(Request $request, EntityManagerInterface $entityManager, \Swift_Mailer $mailer)
     {
         $contact = new Contact();
-
         $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
-        if($form->isSubmitted() &&  $form->isValid()){
 
-            $entityManager->persist($contact);
-            $entityManager->flush();
+        if ($request->isMethod('Post')) {
 
-            return $this->redirectToRoute('article_index');
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($contact);
+                $entityManager->flush();
+
+                $message = (new \Swift_Message('You Got Mail!'))
+                        ->setSubject('Demande de contact')
+                        ->setFrom('laurent.eldin@lapiscine.pro')
+                        ->setTo('eldin.laurent@gmail.com')
+                        ->setBody('Vous avez une demande de contact. Nom: '.$contact->getFirstname().' , '.$contact->getLastname().'. Tel: '.$contact->getPhone().' ; mail: '.$contact->getEmail().'. Sujet: '.$contact->getTopic().'. Message: ' .$contact->getMessage(). '.','text/html');
+                $mailer->send($message);
+
+                return $this->redirectToRoute('index');
+            }
         }
 
-        return $this->render('article/index.html.twig', [
+        return $this->render('public/index.html.twig', [
             'forms' => $form->createView()
         ]);
     }
