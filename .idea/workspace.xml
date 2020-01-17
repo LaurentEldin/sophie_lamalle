@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd274040-0936-4adf-907a-7a5685a8cab0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env.local" beforeDir="false" afterPath="$PROJECT_DIR$/.env.local" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/_footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/_header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/UrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/UrlGenerator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/UrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/UrlMatcher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.php" afterDir="false" />
@@ -32,7 +14,6 @@
       <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.preload.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.preload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainerCompiler.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/log/dev.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +214,7 @@
       <workItem from="1578476585735" duration="398000" />
       <workItem from="1578487587304" duration="95000" />
       <workItem from="1578487703846" duration="190000" />
-      <workItem from="1578487916669" duration="20979000" />
+      <workItem from="1578487916669" duration="29604000" />
     </task>
     <task id="LOCAL-00001" summary="commit 1">
       <created>1576840196590</created>
@@ -263,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578476826325</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finish crud 100%">
+      <created>1579207910008</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579207910008</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +262,8 @@
     <MESSAGE value="commit 2" />
     <MESSAGE value="commit add photo ok" />
     <MESSAGE value="swiftmailer install" />
-    <option name="LAST_COMMIT_MESSAGE" value="swiftmailer install" />
+    <MESSAGE value="Finish crud 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish crud 100%" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="114" key="#Inspections" timestamp="1576848714698">
@@ -289,10 +278,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="211" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579185012438" />
-    <state x="235" y="0" width="1060" height="877" key="CommitChangelistDialog2" timestamp="1578476824636">
+    <state x="235" y="0" width="1060" height="877" key="CommitChangelistDialog2" timestamp="1579249768627">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578476824636" />
+    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579249768627" />
     <state x="235" y="23" width="1060" height="877" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1576840176598" />
     <state x="347" y="256" key="NewPhpClassDialog" timestamp="1576510767338">
       <screen x="0" y="0" width="1440" height="900" />
@@ -303,10 +292,14 @@
     </state>
     <state x="293" y="65" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1579142468816" />
     <state x="229" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1576510655925" />
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1578476829248">
+    <state x="572" y="364" key="VCS.ChangelistChooser" timestamp="1579214284517">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578476829248" />
+    <state x="572" y="364" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1579214284517" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1579207913344">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579207913344" />
     <state x="320" y="185" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1576840204570" />
     <state x="399" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578487916721">
       <screen x="0" y="0" width="1440" height="900" />

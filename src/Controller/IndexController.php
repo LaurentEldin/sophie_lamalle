@@ -5,41 +5,43 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 class IndexController extends AbstractController
 {
     /**
      * @Route("/", name="index")
+     * @param Request $request
+     * @param EntityManagerInterface $entityManager
+     * @return RedirectResponse|Response
      */
-    public function showContact()
+    public function sendMail(Request $request, EntityManagerInterface $entityManager)
     {
-        $contactType = New ContactType();
-        $contact = New Contact();
+        $contact = new Contact();
 
-        $form = $this->createForm(ContactType::class);
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
         if($form->isSubmitted() &&  $form->isValid()){
-            $firstname = $form['firstname']->getData();
-            $lastname = $form['lastname']->getData();
-            $phone = $form['phone']->getData();
-            $email = $form['email']->getData();
-            $topic = $form['topic']->getData();
-            $message = $form['message']->getData();
-            # set form data
-            $contact->setFirstname($firstname);
-            $contact->setLastname($lastname);
-            $contact->setPhone($phone);
-            $contact->setEmail($email);
-            $contact->setTopic($topic);
-            $contact->setMessage($message);
-            # finally add data in database
-            $sn = $this->getDoctrine()->getManager();
-            $sn -> persist($contact);
-            $sn -> flush();
+
+            $data = $form->getData();
+
+            $contact->setFirstname($data['firstname']);
+            $contact->setLastname($data['lastname']);
+            $contact->setPhone($data['phone']);
+            $contact->setEmail($data['email']);
+            $contact->setTopic($data['topic']);
+            $contact->setMessage($data['message']);
+
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('index');
         }
 
         return $this->render('public/index.html.twig', [

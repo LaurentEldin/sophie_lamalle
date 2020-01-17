@@ -26,7 +26,7 @@ class ArticleController extends AbstractController
 ----------------------------------------------------------------------------------------------------------------------
 */
     /**
-     * @Route("/", name="article_index")
+     * @Route("/", name="article_index", methods={"GET","POST"})
      * @param ArticleRepository $articleRepository
      * @param CategoriesRepository $categoriesRepository
      * @return Response
@@ -35,34 +35,10 @@ class ArticleController extends AbstractController
     {
         $categorie = $categoriesRepository->findAll();
         $article = $articleRepository->findAll();
-        $contactType = New ContactType();
-        $contact = New Contact();
-
-        $form = $this->createForm(ContactType::class);
-        if($form->isSubmitted() &&  $form->isValid()){
-            $firstname = $form['firstname']->getData();
-            $lastname = $form['lastname']->getData();
-            $phone = $form['phone']->getData();
-            $email = $form['email']->getData();
-            $topic = $form['topic']->getData();
-            $message = $form['message']->getData();
-            # set form data
-            $contact->setFirstname($firstname);
-            $contact->setLastname($lastname);
-            $contact->setPhone($phone);
-            $contact->setEmail($email);
-            $contact->setTopic($topic);
-            $contact->setMessage($message);
-            # finally add data in database
-            $sn = $this->getDoctrine()->getManager();
-            $sn -> persist($contact);
-            $sn -> flush();
-        }
 
         return $this->render('article/index.html.twig', [
             'articles' => $article,
             'categories' => $categorie,
-            'form' => $form->createView()
         ]);
     }
 
@@ -173,3 +149,5 @@ class ArticleController extends AbstractController
         return $this->redirectToRoute('article_index');
     }
 }
+
+

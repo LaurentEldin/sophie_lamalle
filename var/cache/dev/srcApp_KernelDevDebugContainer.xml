@@ -261,15 +261,15 @@
     <parameter key="swiftmailer.spool.default.memory.path">/Applications/MAMP/htdocs/sophie_lamalle/sophie_lamalle_psychologue/var/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
-    <parameter key="swiftmailer.mailer.default.single_address">eldin.laurent@gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.single_address">laurent.eldin@lapiscine.pro</parameter>
     <parameter key="swiftmailer.mailer.default.delivery_addresses" type="collection">
-      <parameter>eldin.laurent@gmail.com</parameter>
+      <parameter>laurent.eldin@lapiscine.pro</parameter>
     </parameter>
     <parameter key="swiftmailer.mailer.default.delivery_whitelist" type="collection"/>
     <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
     <parameter key="swiftmailer.spool.enabled">true</parameter>
     <parameter key="swiftmailer.delivery.enabled">true</parameter>
-    <parameter key="swiftmailer.single_address">eldin.laurent@gmail.com</parameter>
+    <parameter key="swiftmailer.single_address">laurent.eldin@lapiscine.pro</parameter>
     <parameter key="swiftmailer.mailers" type="collection">
       <parameter key="default">swiftmailer.mailer.default</parameter>
     </parameter>
@@ -5447,7 +5447,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.H0.MF1R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.wRuwFjy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ArticleController::delete" type="service" id=".service_locator.WKL2avN"/>
@@ -5455,6 +5455,7 @@
         <argument key="App\Controller\ArticleController::index" type="service" id=".service_locator.EsHmdMT"/>
         <argument key="App\Controller\ArticleController::new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController::show" type="service" id=".service_locator.WKL2avN"/>
+        <argument key="App\Controller\IndexController::showContact" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
         <argument key="App\Controller\ArticleController:delete" type="service" id=".service_locator.WKL2avN"/>
@@ -5462,6 +5463,7 @@
         <argument key="App\Controller\ArticleController:index" type="service" id=".service_locator.EsHmdMT"/>
         <argument key="App\Controller\ArticleController:new" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\ArticleController:show" type="service" id=".service_locator.WKL2avN"/>
+        <argument key="App\Controller\IndexController:showContact" type="service" id=".service_locator.x8FmIZ0"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.CAOjM5H"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
       </argument>
@@ -5876,12 +5878,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.H0.MF1R"/>
+      <argument type="service" id=".service_locator.wRuwFjy"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.H0.MF1R"/>
+      <argument type="service" id=".service_locator.wRuwFjy"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6338,7 +6340,7 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.H0.MF1R"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.wRuwFjy"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
