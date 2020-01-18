@@ -32,7 +32,8 @@ class ContactController extends AbstractController
      */
 
     // Je crée une fonction pour envoyer un email de contact.
-    public function sendMail(ArticleRepository $articleRepository, CategoriesRepository $categoriesRepository,Request $request, EntityManagerInterface $entityManager, \Swift_Mailer $mailer)
+    public function sendMail(ArticleRepository $articleRepository, CategoriesRepository $categoriesRepository,
+                             Request $request, EntityManagerInterface $entityManager, \Swift_Mailer $mailer)
     {
         // J'appelle la méthode findAll du Repository pour retourner tous éléments de l'Entité.
         // Elle va donc executer une requete SELECT en base de données.
@@ -68,7 +69,8 @@ class ContactController extends AbstractController
                 // Je crée un nouveau message vide que je stock dans ma variable message.
                 $message = (new \Swift_Message())
 
-                    // Je détermine les parametres d'envoie du mail. Comme le sujet / l'adresse de l'expéditeur / Le destinataire.
+                    // Je détermine les parametres d'envoie du mail. 
+                    // Comme le sujet / l'adresse de l'expéditeur / Le destinataire.
                         ->setSubject('Demande de contact')
                         ->setFrom('laurent.eldin@lapiscine.pro')
                         ->setTo('eldin.laurent@gmail.com')
@@ -76,13 +78,17 @@ class ContactController extends AbstractController
                     // Je défini le message qui sera adressé dans le mail.
                     // Je concatène avec les méthodes "get" de mon Entité Contact.
                     // Qui récupère les informations envoyées en BDD.
-                        ->setBody('Vous avez une demande de contact. Nom: '.$contact->getFirstname().' , '.$contact->getLastname().'. Tel: '.$contact->getPhone().' ; mail: '.$contact->getEmail().'. Sujet: '.$contact->getTopic().'. Message: ' .$contact->getMessage(). '.','text/html');
+                        ->setBody('Vous avez une demande de contact. Nom: '.$contact->getFirstname().' 
+                        , '.$contact->getLastname().'. Tel: '.$contact->getPhone().' ;
+                         mail: '.$contact->getEmail().'. Sujet: '.$contact->getTopic().'. 
+                        Message: ' .$contact->getMessage(). '.','text/html');
 
                 // Grâce à la méthode "Send" du bundle Swiftmailer que j'ai placé en parametre
                 // Je lui demande d'envoyer ma variable $message qui n'est plus vide.
                 $mailer->send($message);
 
-                // Si cela réussis je demande un message "flash" de confirmation pour confirmer à l'utilisateur l'envoie de sa demande.
+                // Si cela réussis je demande un message "flash" de confirmation.
+                // pour mettre un visuel  de confirmation à l'utilisateur sur l'envoie de sa demande.
                 $this->addFlash('success', 'Votre demande a été envoyé avec succès.');
 
                 // Et redirige les informations vers la page "article_index" pour qu'elles soient dans l'url
