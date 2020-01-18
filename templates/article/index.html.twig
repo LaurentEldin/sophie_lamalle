@@ -30,12 +30,14 @@
                 {# Je crée une condition pour alterner l'affichage la div et paire ou pas #}
                 {% if loop.index is odd %}
                     <article class="article2 row justify-content-center justify-content-xl-start align-items-center">
-                        <img class="offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
+                        <img class="offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid" 
+                        src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
                         {# Ici j'ai utilisé Bootstrap pour réaliser mon site en Responsive #}
                         <div class="w-sm-100 w-md-100 col-sm-12 col-md-12 col-lg-12 col-xl-6 divtxt">
                             <h3>{{ article.title|raw }}</h3>
 
-                            {# J'appel le champs "text" de mon entité Article. Et je place un filtre pour qu'il s'affiche correctement en HTML #}
+                            {# J'appel le champs "text" de mon entité Article. 
+                            Et je place un filtre pour qu'il s'affiche correctement en HTML #}
                             <p>{{ article.text|raw }}</p>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
@@ -53,7 +55,8 @@
                                 <a class="buttonadmin" href="{{ path('article_delete', {'id': article.id}) }}">Supprimer</a>
                             {% endif %}
                         </div>
-                        <img class="order-first order-xl-last offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
+                        <img class="order-first order-xl-last offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid"
+                        src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
                     </article>
                 {% endif %}
             {% endfor %}
