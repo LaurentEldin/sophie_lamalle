@@ -1,13 +1,21 @@
+{# Ici je fais hérité mon fichier twig de mon fichier base. C'est mon layout ! #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Nouvel article{% endblock %}
 
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------                DEBUT DU BLOCK BODY               -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
 {% block body %}
     <div class="mainindex">
         <h1>Créer un nouvel article</h1>
 
+{#        J'inclue ici mon fichier twig avec mon formulaire ArticleType. #}
+{#        J'ai décidé de le mettre dans un fichier séparé, car je vais m'en servir pour en créer et modifier #}
+{#        un article. Inutile donc de l'écrire deux fois. Mais plutôt ce servir du système d'inclusion de symfony et twig#}
         {{ include('article/_form.html.twig') }}
 
+{#        Je crée un lien stylisé en bouton avec un chemin pour revenir sur ma page "article_index"#}
         <a class="buttonadmin" href="{{ path('article_index') }}">Retour</a>
     </div>
 {% endblock %}

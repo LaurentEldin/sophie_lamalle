@@ -1,3 +1,11 @@
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------                        HEADER                    -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
+
+{# J'utilise pour mon header une balise <nav>
+ Ensuite pour que mes ancres marchent en fonction des articles, je définie par une condition "if" que SI une catégorie est définie
+ ET que si elle est défini elle est alors STRICTEMENT égale à ce que je note entre quote. J'active le lien.
+ et dans mon href je copie/colle ce que j'ai écris entre quote. De cette façon je crée des ancrages valide. #}
 <header>
     <nav class="navheader">
         <div>
@@ -14,6 +22,8 @@
         </div>
         <div><a href="{{ path('article_index') }}#infos">Infos <strong>utiles</strong></a></div>
         <div><a href="{{ path('article_index') }}#reservation">Réservation</a></div>
+
+        {# Ici je mets un condition d'apparition en fonction du rôle du user. #}
         {% if is_granted('ROLE_ADMIN') %}
         <div><a href="{{ path('app_logout') }}">Deconnexion</a></div>
         {% endif %}

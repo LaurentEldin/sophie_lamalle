@@ -1,6 +1,14 @@
-
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------        FORMULAIRE CRÉATION ET MODIFICATION       -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
 <div class="article2">
+
+{#    Je débute mon formulaire par la variable start_form.#}
     {{ form_start(form) }}
+
+{#    Je dissocie tout les champs de mon formulaire pour le rendre plus personnalisable.#}
+{#    Le form_label s'occupe du nom et le form_widget s'occupe de l'input. #}
+{#    Cela me permet d'avoir le nom au dessus de l'input et non directement à coté. #}
     <div class="categorie">
         <div>{{ form_label(form.categorie) }}</div>
         <div>{{ form_widget(form.categorie) }}</div>
@@ -22,5 +30,7 @@
     </div>
     <br>
     <button class="buttonadmin">{{ button_label|default('Sauvegarder') }}</button>
+
+{#    Je termine en utilisant form_end#}
     {{ form_end(form) }}
 </div>

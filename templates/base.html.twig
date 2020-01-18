@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------                          HEAD                    -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
 <head>
 {#    C'est un peu l'ame du site. On y écrit le comportement. #}
     <meta charset="UTF-8">
@@ -10,13 +14,23 @@
     <meta name="keywords" content="psychologue, enfant, adolescent, psychologie, dépistage, autisme" />
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
+
+{#        Les balises link permettent de pouvoir joindre un fichier extérieur. Cela fait partie des bonnes pratique pour
+          apporter plus de visibilité et alleger le code. #}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/js/script.js') }}">
     {% endblock %}
 </head>
 
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------                     DÉBUT DU BODY                -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
 <body>
+
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#--------------------------------         MESSAGE SUCCESS POUR L'ENVOIE D'EMAIL       ---------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
 {% for message in app.flashes('success') %}
     <div class="alert alert-success mb-0">
         <h4 class="alert-heading">Merci</h4>

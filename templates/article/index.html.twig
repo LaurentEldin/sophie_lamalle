@@ -6,6 +6,10 @@
 {# J'ouvre mon block body alloué dans le fichier "base" #}
 {% block body %}
     <body>
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#-------------------------                  AFFICHAGE ARTICLES ET CATÉGORIE               -----------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
+
         {# Je crée une boucle pour afficher mes catégories #}
         {% for categorie in categories %}
 
@@ -27,7 +31,7 @@
                 {% if loop.index is odd %}
                     <article class="article2 row justify-content-center justify-content-xl-start align-items-center">
                         <img class="offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
-                        {# Ici j'ai utilisé du Bootstrap pour réaliser mon site en Responsive #}
+                        {# Ici j'ai utilisé Bootstrap pour réaliser mon site en Responsive #}
                         <div class="w-sm-100 w-md-100 col-sm-12 col-md-12 col-lg-12 col-xl-6 divtxt">
                             <h3>{{ article.title|raw }}</h3>
 
@@ -54,6 +58,10 @@
                 {% endif %}
             {% endfor %}
         {% endfor %}
+
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------              DÉBUT PARTIE FIXE : INFOS           -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
         <h1 id="infos">Infos utiles</h1>
         <article class="row article2">
             <div class="map-responsive col-6">
@@ -75,6 +83,11 @@
         <div class="titreadmin">
             <h1 id="reservation">Réservations</h1>
         </div>
+
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------                FORMULAIRE DE CONTACT             -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
+
         <article class="article2">
             <form method="post" class="form_contact" action="">
                 {{ form_start(forms) }}
@@ -108,6 +121,10 @@
                 {{ form_end(forms) }}
             </form>
         </article>
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------                 PRISE DE RDV DOCTOLIB            -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
+
         <article class="article2">
             <div class="rdv">
                 <h3>Prise de <strong>rendez-vous</strong></h3>

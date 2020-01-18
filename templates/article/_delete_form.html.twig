@@ -1,3 +1,13 @@
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------                FORMULAIRE SUPPRESSION            -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
+
+{# J'utilise un formulaire avec la méthode POST et dans l'action je lui demande de récupérer l'id de l'article que je souhaite supprimer. #}
+{#Avec le onsubmit je demande une confirmation supplémentaire de suppression quand on valide une première fois la suppression. #}
+{#Je préfère doubler les étapes afin d'etre sur de ne pas avoir de suppression accidentelle. #}
+{#Les inputs sont caché pour (pourquoi ?). J'utilise comme sécurité supplémentaire le jetons CSRF d'authentification de l'article ciblé grâce à son id. #}
+{#Et je termine mon forumlaire par un boutton de validation de suppression. #}
+
 <form method="post" action="{{ path('article_delete', {'id': article.id}) }}" onsubmit="return confirm('Êtes-vous certain de vouloir supprimer cet article ?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">

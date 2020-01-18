@@ -1,13 +1,19 @@
 {% extends 'base.html.twig' %}
 
+{#----------------------------------------------------------------------------------------------------------------------#}
+{#---------------------------------           FORMULAIRE DE MODIFICATION             -----------------------------------#}
+{#----------------------------------------------------------------------------------------------------------------------#}
 {% block title %}Éditer un article{% endblock %}
 
 {% block body %}
     <h1>Éditer un article</h1>
 
+{#    J'utilise le include du formulaire dans lequel je modifie le label du boutton. #}
+{#    Ce ne sera plus 'sauvegarder', mais 'modifier'#}
     {{ include('article/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     <a class="buttonadmin" href="{{ path('article_index') }}">Retour</a>
 
+{#    J'inclus ici la partie "suppression" d'article. #}
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}

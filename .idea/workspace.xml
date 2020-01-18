@@ -3,14 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="cd274040-0936-4adf-907a-7a5685a8cab0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/_footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +218,7 @@
       <workItem from="1578476585735" duration="398000" />
       <workItem from="1578487587304" duration="95000" />
       <workItem from="1578487703846" duration="190000" />
-      <workItem from="1578487916669" duration="55708000" />
+      <workItem from="1578487916669" duration="59574000" />
     </task>
     <task id="LOCAL-00001" summary="commit 1">
       <created>1576840196590</created>
@@ -294,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579295544985</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Début des commentaires de code : reste à faire les fichiers twig Forms/show/edit.">
+      <created>1579308354881</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1579308354881</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +322,8 @@
     <MESSAGE value="Sending an email : OK" />
     <MESSAGE value="Alert-success : OK" />
     <MESSAGE value="change indexController by ContactController and suppr public/index&#10;Always getting sending email and success message." />
-    <option name="LAST_COMMIT_MESSAGE" value="change indexController by ContactController and suppr public/index&#10;Always getting sending email and success message." />
+    <MESSAGE value="Début des commentaires de code : reste à faire les fichiers twig Forms/show/edit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Début des commentaires de code : reste à faire les fichiers twig Forms/show/edit." />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="114" key="#Inspections" timestamp="1576848714698">
@@ -331,10 +342,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="211" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579294739741" />
-    <state x="254" y="0" width="951" height="877" key="CommitChangelistDialog2" timestamp="1579295543959">
+    <state x="254" y="0" width="951" height="877" key="CommitChangelistDialog2" timestamp="1579308354303">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="254" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579295543959" />
+    <state x="254" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579308354303" />
     <state x="235" y="23" width="951" height="877" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1579254144744" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1579294118743">
       <screen x="0" y="23" width="1440" height="877" />
@@ -353,10 +364,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="572" y="364" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1579293015492" />
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1579295547217">
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1579308357066">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579295547217" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579308357066" />
     <state x="320" y="185" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1576840204570" />
     <state x="399" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1578487916721">
       <screen x="0" y="0" width="1440" height="900" />
