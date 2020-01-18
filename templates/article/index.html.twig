@@ -1,24 +1,37 @@
+{# Je fais hérité mon fichier twig de ma 'base' pour que les pages de mon site se ressemblent. #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Articles{% endblock %}
 
+{# J'ouvre mon block body alloué dans le fichier "base" #}
 {% block body %}
     <body>
+        {# Je crée une boucle pour afficher mes catégories #}
         {% for categorie in categories %}
+
+            {# Je définie une condition pour afficher du HTML. ici c'est d'être loggé en admin #}
             {% if is_granted('ROLE_ADMIN') %}
                 <div class="titreadmin">
+                    {# J'ai crée des ancres pour naviguer sur le site directement via le Header #}
                     <h1 id="{{ categorie.libelle }}">{{ categorie.libelle }}</h1>
                     <a href="{{ path('article_new') }}" class="buttonadmin">Créer un article</a>
                 </div>
             {% else %}
                 <h1 id="{{ categorie.libelle }}">{{ categorie.libelle }}</h1>
             {% endif %}
+            {# Et je ferme ma condition avec le endif #}
+
+            {# Je crée une boucle pour afficher mes articles #}
             {% for article in categorie.articles %}
+                {# Je crée une condition pour alterner l'affichage la div et paire ou pas #}
                 {% if loop.index is odd %}
                     <article class="article2 row justify-content-center justify-content-xl-start align-items-center">
                         <img class="offset-2 col-sm-8 col-md-8 col-lg-8 col-xl-5 img1 img-fluid" src="{{ asset('assets/uploaded_images/' ~ article.filename) }}" alt="">
+                        {# Ici j'ai utilisé du Bootstrap pour réaliser mon site en Responsive #}
                         <div class="w-sm-100 w-md-100 col-sm-12 col-md-12 col-lg-12 col-xl-6 divtxt">
                             <h3>{{ article.title|raw }}</h3>
+
+                            {# J'appel le champs "text" de mon entité Article. Et je place un filtre pour qu'il s'affiche correctement en HTML #}
                             <p>{{ article.text|raw }}</p>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a class="buttonadmin" href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
